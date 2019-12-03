@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Последние публикации {% endblock title %}
+
+{% block content %}
+
+        {% for a in latest_articles_list %}
+            <a href="{% url 'articles:detail' a.id %} "> {{a.title}}</a>
+
+        {% endfor %}
+
+{% endblock%}
+
