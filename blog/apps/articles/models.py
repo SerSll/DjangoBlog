@@ -10,7 +10,6 @@ class Article(models.Model):
     title = models.CharField('Название статьи', max_length=200)    # поле для ввода небольшого текста
     text = models.TextField('Содержание статьи')  # Поле для ввода большого текста
     date_publ = models.DateTimeField('Дата публикации')   # Дата публикации
-    author = models.CharField('Автор', max_length=50)  # Автор статьи
 
     def __str__(self):
         return self.title
@@ -35,3 +34,18 @@ class Comment(models.Model):
     class Meta():
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'  # Руссифицируем админку
+
+
+class FeedBack(models.Model):
+    name = models.CharField('Имя пользователя', max_length=60)
+    feed_back = models.TextField('Содержание отзыва')
+    date = models.DateTimeField('Дата публикации')
+
+    def __str__(self):
+        return self.name
+
+
+    class Meta():
+        verbose_name = 'Отзыв'
+        verbose_name_plural = 'Отзывы'
+
