@@ -36,16 +36,3 @@ class Comment(models.Model):
         verbose_name_plural = 'Комментарии'  # Руссифицируем админку
 
 
-class FeedBack(models.Model):
-    name = models.CharField('Имя пользователя', max_length=60)
-    feed_back = models.TextField('Содержание отзыва')
-    date = models.DateTimeField('Дата публикации')
-
-    def __str__(self):
-        return self.name
-
-
-    class Meta():
-        verbose_name = 'Отзыв'
-        verbose_name_plural = 'Отзывы'
-
